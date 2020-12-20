@@ -10,4 +10,8 @@ class LearnItemService(var learnItemDao: LearnItemDao) {
     fun getAll(): Iterable<LearnItem> {
         return learnItemDao.findAll()
     }
+
+    fun save(item: LearnItem) {
+        learnItemDao.save(item)
+    }
 }

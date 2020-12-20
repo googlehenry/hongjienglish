@@ -1,0 +1,13 @@
+logging:
+  level:
+    root: info
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: root
+    password: 1qazXsw2
+    url: jdbc:mariadb://127.0.0.1:3306/hongjienglish?characterEncoding=utf-8&useSSL=false
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 50MB

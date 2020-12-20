@@ -9,26 +9,26 @@ import javax.persistence.Table
 
 @Entity
 @Table(name = "learn_item")
-class LearnItem(
+data class LearnItem(
         @Id
         @Column(name = "id")
-        var id: String,
+        var id: String = UUID.randomUUID().toString(),
         @Column(name = "grade")//1-12
-        var grade: Int,
+        var grade: Int = 1,
         @Column(name = "category")//amimal
-        var category: String,
+        var category: String = "",
         @Column(name = "name")//apple,苹果
-        var name: String,
+        var name: String = "",
         @Column(name = "locale")//en_us,zh_cn
-        var locale: String,
+        var locale: String = "zh_CN",
         @Column(name = "image")
-        var image: String,
+        var image: String? = null,
         @Column(name = "audio")
-        var audio: String,
+        var audio: String? = null,
         @Column(name = "video")
-        var video: String,
+        var video: String? = null,
         @Column(name = "description")
-        var description: String
+        var description: String? = ""
 
 
 )
