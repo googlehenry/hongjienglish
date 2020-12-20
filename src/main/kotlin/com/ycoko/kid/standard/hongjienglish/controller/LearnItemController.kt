@@ -26,9 +26,9 @@ class LearnItemController(var learnItemService: LearnItemService) {
             learnItemService.getAll()
         }
 
-        items?.shuffled()
+        var sorted = items?.shuffled()
         var model = ModelAndView()
-        model.addObject("items", items)
+        model.addObject("items", sorted)
         model.viewName = "show"
         return model
     }

@@ -8,7 +8,7 @@
 <body>
 <h2>鸿基小儿学习<h3><a href="/?locale=zh_CN">中文</a> 或者 <a href="/?locale=en_US">英文</a></h3></h2>
 <hr>
-<table th:each="item:${items}" style="border:1px solid red;float:left;margin-right:5px;" th:data-ItemId="${item.id}">
+<table th:each="item:${items}" style="border:1px solid #00ccff;float:left;margin-right:5px;margin-bottom:5px;border-radius:5px;" th:data-ItemId="${item.id}">
     <tr>
         <td colspan="2">
             <img th:data-ItemId="${item.id}" th:src="'data:image/png;base64,'+${item.image}"
@@ -17,8 +17,8 @@
     </tr>
     <tr>
         <td th:text="${item.name}" style="font-weight:bold;"></td>
-        <td style="text-align:right;">
-            <img th:data-ItemId="${item.id}" src="/imgs/speaker.png"
+        <td style="text-align:right;" th:if="${item.audio!=''}">
+            <img th:data-ItemId="${item.id}" src="data:image/png;base64,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"
                  style="height:24px;width:24px;"
                  th:onclick="play(this)"/>
             <audio th:id="${item.id}+'_audio'" th:src="'data:audio/wav;base64,'+${item.audio}"></audio>
