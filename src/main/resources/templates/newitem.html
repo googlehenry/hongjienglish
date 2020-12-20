@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="Shortcut Icon" href="/favicon.ico" type="image/x-icon"/>
     <meta charset="UTF-8">
     <title>红基英语</title>
 </head>
@@ -10,13 +11,17 @@
 <form action="/admin/add" method="post" enctype="multipart/form-data">
     <table>
         <tr>
-            <td><label for="name">名称</label></td>
-            <td><input name="name" id="name"/></td>
+            <td><label for="id">ID</label></td>
+            <td><input name="id" id="id" placeholder="添加或更新"/></td>
+        </tr>
+        <tr>
+            <td><label for="name">名称(小于4个字)</label></td>
+            <td><input name="name" id="name" placeholder="例如:小狗"/></td>
         </tr>
         <tr>
             <td><label for="locale">语言</label></td>
             <td>
-                <input list="locale_list" name="locale" id="locale"/>
+                <input list="locale_list" name="locale" id="locale" value="zh_CN"/>
                 <datalist id="locale_list">
                     <option label="中文" value="zh_CN"></option>
                     <option label="English" value="en_US"></option>
@@ -43,29 +48,40 @@
             <td>
                 <input list="category_list" name="category" id="category"/>
                 <datalist id="category_list">
-                    <option label="水果" value="fruit"></option>
+                    <option label="水果蔬菜" value="fruit"></option>
                     <option label="交通工具" value="vehicle"></option>
-                    <option label="动物" value="animal"></option>
+                    <option label="动物植物" value="animal"></option>
                 </datalist>
             </td>
         </tr>
         <tr>
-            <td><label for="image" accept="image/gif,image/jpg">图片</label></td>
+            <td><label for="image" accept="image/gif,image/jpg">图片(64*64)</label></td>
             <td><input type="file" name="image" id="image"/></td>
         </tr>
         <tr>
-            <td><label for="audio">音频</label></td>
+            <td><label for="audio">音频(.mp3,.wav)</label></td>
             <td><input type="file" name="audio" id="audio"/></td>
         </tr>
-        <tr>
-            <td><label for="video">视频</label></td>
-            <td><input type="file" name="video" id="video"/></td>
-        </tr>
+        <!--        <tr>-->
+        <!--            <td><label for="video">视频</label></td>-->
+        <!--            <td><input type="file" name="video" id="video"/></td>-->
+        <!--        </tr>-->
     </table>
 
     <button id="addItemBtn">保存</button>
 </form>
 
+<table>
+    <tr>
+        <td>说明</td>
+    </tr>
+    <tr>
+        <td>1.ID有值是更新，没值时添加。</td>
+    </tr>
+    <tr>
+        <td>2.除了ID有值之外，其余都为空，则删除记录。</td>
+    </tr>
+</table>
 
 </body>
 </html>

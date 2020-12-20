@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="Shortcut Icon" href="/favicon.ico" type="image/x-icon"/>
+    <meta charset="UTF-8">
+    <title>红基英语</title>
+</head>
+<body>
+<h2>鸿基小儿学习<h3><a href="/?locale=zh_CN">中文</a> 或者 <a href="/?locale=en_US">英文</a></h3></h2>
+<hr>
+<table th:each="item:${items}" style="border:1px solid red;float:left;margin-right:5px;" th:data-ItemId="${item.id}">
+    <tr>
+        <td colspan="2">
+            <img th:data-ItemId="${item.id}" th:src="'data:image/png;base64,'+${item.image}"
+                 style="height:128px;width:128px;" th:onclick="play(this)"/>
+        </td>
+    </tr>
+    <tr>
+        <td th:text="${item.name}" style="font-weight:bold;"></td>
+        <td style="text-align:right;">
+            <img th:data-ItemId="${item.id}" src="/imgs/speaker.png"
+                 style="height:24px;width:24px;"
+                 th:onclick="play(this)"/>
+            <audio th:id="${item.id}+'_audio'" th:src="'data:audio/wav;base64,'+${item.audio}"></audio>
+        </td>
+    </tr>
+</table>
+
+
+<script>
+    function play(e){
+     var id = e.attributes.getNamedItem("data-itemId").value;
+      document.getElementById(id+"_audio").play();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -11,7 +11,15 @@ class LearnItemService(var learnItemDao: LearnItemDao) {
         return learnItemDao.findAll()
     }
 
+    fun getByLocale(locale: String): Iterable<LearnItem> {
+        return learnItemDao.findByLocale(locale)
+    }
+
     fun save(item: LearnItem) {
         learnItemDao.save(item)
+    }
+
+    fun delete(learnItem: LearnItem) {
+        learnItemDao.delete(learnItem)
     }
 }
