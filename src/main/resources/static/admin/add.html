@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>红基英语</title>
+</head>
+<body>
+
+<h2>添加一个新的</h2>
+<form>
+    <table>
+        <tr>
+            <td><label for="name">名称</label></td>
+            <td><input name="name" id="name"/></td>
+        </tr>
+        <tr>
+            <td><label for="locale">语言</label></td>
+            <td>
+                <input list="locale_list" name="locale" id="locale"/>
+                <datalist id="locale_list">
+                    <option label="中文" value="zh_CN"></option>
+                    <option label="English" value="en_US"></option>
+                </datalist>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="description">描述</label></td>
+            <td><textarea name="description" id="description"></textarea></td>
+        </tr>
+        <tr>
+            <td><label for="grade">分级</label></td>
+            <td>
+                <input list="grade_list" name="grade" id="grade"/>
+                <datalist id="grade_list">
+                    <option label="一级(小班)" value="1"></option>
+                    <option label="二级(中班)" value="2"></option>
+                    <option label="三级(大班)" value="3"></option>
+                </datalist>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="category">分类</label></td>
+            <td>
+                <input list="category_list" name="category" id="category"/>
+                <datalist id="category_list">
+                    <option label="水果" value="fruit"></option>
+                    <option label="交通工具" value="vehicle"></option>
+                    <option label="动物" value="animal"></option>
+                </datalist>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="image" accept="image/gif,image/jpg">图片</label></td>
+            <td><input type="file" name="image" id="image"/></td>
+        </tr>
+        <tr>
+            <td><label for="audio">音频</label></td>
+            <td><input type="file" name="audio" id="audio"/></td>
+        </tr>
+        <tr>
+            <td><label for="video">视频</label></td>
+            <td><input type="file" name="video" id="video"/></td>
+        </tr>
+    </table>
+
+    <button id="addItemBtn">保存</button>
+</form>
+
+
+</body>
+</html>
